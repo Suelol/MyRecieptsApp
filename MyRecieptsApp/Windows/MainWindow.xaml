@@ -1,0 +1,25 @@
+﻿<Window x:Class="MyRecieptsApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyRecieptsApp.Windows"
+        xmlns:local1="clr-namespace:MyRecieptsApp.Classes"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="650" MinHeight="650" Width="900" MinWidth="900" WindowStartupLocation="CenterScreen" ResizeMode="CanResize">
+
+    <Window.DataContext>
+        <local1:DishesManager/>
+    </Window.DataContext>
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <local:MenuControl BorderThickness="0 1 1 0" BorderBrush="Black" />
+
+        <Frame x:Name="MainFrame" BorderThickness="0 1 0 0" BorderBrush="Black" NavigationUIVisibility="Hidden" Grid.Column="1"/>
+    </Grid>
+</Window>
